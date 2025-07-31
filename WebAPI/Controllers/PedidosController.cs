@@ -18,6 +18,7 @@ namespace WebAPI.Controllers
         [HttpPost]
         public IActionResult Post([FromBody] PedidoDTO dto)
         {
+            //adicionei este comentario aqui
             var itens = dto.Itens.Select(i => (i.ProdutoId, i.Quantidade)).ToList();
             _service.CriarPedido(itens);
             return Ok(); 
